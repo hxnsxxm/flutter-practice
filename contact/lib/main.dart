@@ -17,21 +17,32 @@ class MyApp extends StatelessWidget {
           centerTitle: false,
         ),
         body: Container(
-          child: Text('안녕')
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('1x1.jpeg', width: 150),
+              Container(
+                width: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('카메라 팝니다.'),
+                    Text('금호동 3가'),
+                    Text('7000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4'),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          child: Container(
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page)
-              ],
-            )
-          )
-        )
       )
     );
   }
