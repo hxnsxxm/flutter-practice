@@ -52,6 +52,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets: # 등록
+    - assets/ # assets 폴더에 있는 모든 내용을 쓰겠다.
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
