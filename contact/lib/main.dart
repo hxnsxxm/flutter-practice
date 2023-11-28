@@ -12,38 +12,38 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("앱임"),
-          centerTitle: false,
+        appBar: AppBar(),
+        body: ListView.builder(
+          itemCount: 3, // 반복 횟수
+          itemBuilder: (context, i) { // 함수
+            print(i); // console에 출력
+            return ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('홍길동')
+            );
+          },
         ),
-        body: Container(
-          height: 150,
-          padding: EdgeInsets.all(10),
-          child: Row(
-            children: [
-              Image.asset('1x1.jpeg', width: 150),
-              Container(
-                width: 300,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('카메라 팝니다.'),
-                    Text('금호동 3가'),
-                    Text('7000원'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.favorite),
-                        Text('4'),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        bottomNavigationBar: CustomBottomBar(),
       )
+    );
+  }
+}
+
+class CustomBottomBar extends StatelessWidget {
+  const CustomBottomBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      height: 60,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(Icons.phone),
+          Icon(Icons.message),
+          Icon(Icons.contact_page),
+        ],
+      ),
     );
   }
 }
