@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  permission_handler: ^8.3.0 # 유저에게 허락을 받는 외부패키지
 
 
   # The following adds the Cupertino Icons font to your application.
